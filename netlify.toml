@@ -4,6 +4,7 @@
   
 [build.environment]
   NODE_VERSION = "10"
+  YARN_FLAGS = "--ignore-engines"
 
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"
