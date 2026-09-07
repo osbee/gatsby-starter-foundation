@@ -6,7 +6,7 @@
   NODE_VERSION = "22"
 
 [dev]
-  command = "npm run develop -- -p 8001"
+  command = "bash scripts/dev-preview.sh"
   targetPort = 8001
   port = 8888
 
