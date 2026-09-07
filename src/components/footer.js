@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 import { Link } from "gatsby"
 import { RiHeart2Line } from "react-icons/ri";
 

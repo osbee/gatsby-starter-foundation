@@ -13,6 +13,7 @@ const netlifyCmsPaths = {
 const settings = require("./src/util/site.json")
 
 module.exports = {
+  jsxRuntime: "automatic",
   siteMetadata: settings.meta,
   plugins: [
     {
@@ -44,7 +45,6 @@ module.exports = {
               maxWidth: 1024,
               showCaptions: true,
               linkImagesToOriginal: false,
-              tracedSVG: true,
               loading: "lazy",
             },
           },
@@ -76,7 +76,7 @@ module.exports = {
         trackingId: settings.ga,
       },
     },
-    `gatsby-plugin-advanced-sitemap`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -89,6 +89,5 @@ module.exports = {
         icon: "static" + settings.meta.iconimage,
       },
     },
-    'gatsby-plugin-offline',
   ],
 }

@@ -1,22 +1,23 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
 
-const PostCard = ({ data }) => (
+const PostCard = ({ data }) => {
+  const featured = data.frontmatter.featuredImage
+  const image = getImage(featured?.childImageSharp?.gatsbyImageData)
+  return (
   <article 
     className="post-card"
     sx={{
       bg: 'cardBg'
     }}
   >
-    {data.frontmatter.featuredImage ? 
+    {featured ? 
       (
         <Link to={data.frontmatter.slug}>
-          <Img 
-            fluid={data.frontmatter.featuredImage.childImageSharp.fluid} 
-            objectFit="cover"
-            objectPosition="50% 50%"
+          <GatsbyImage 
+            image={image} 
+            imgStyle={{ objectFit: 'cover', objectPosition: '50% 50%' }}
             alt={data.frontmatter.title + ' - Featured image'}
             className="featured-image"
           />
@@ -44,6 +45,7 @@ const PostCard = ({ data }) => (
       </p>
     </div>
   </article>
-)
+  )
+}
 
 export default PostCard

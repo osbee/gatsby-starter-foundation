@@ -1,6 +1,5 @@
-/** @jsx jsx */
+/** @jsxImportSource theme-ui */
 import { useState } from "react"
-import { jsx } from 'theme-ui'
 import { graphql } from "gatsby"
 import {RiSendPlane2Line} from "react-icons/ri";
 

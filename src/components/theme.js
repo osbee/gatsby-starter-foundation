@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
+/** @jsxImportSource theme-ui */
 import { FiMoon } from "react-icons/fi";
 import { FiSun } from "react-icons/fi";
 import { useColorMode } from 'theme-ui'

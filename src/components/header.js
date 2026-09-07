@@ -1,6 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
-
+/** @jsxImportSource theme-ui */
 const Header = ({children}) => (
   <header 
     className="site-header"

@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui'
+/** @jsxImportSource theme-ui */
 import { Link, StaticQuery, graphql } from "gatsby"
 import { RiArrowDownLine, RiArrowRightSLine } from "react-icons/ri"
 
@@ -43,10 +42,7 @@ export default function BlogListHome() {
                   title
                   featuredImage {
                     childImageSharp {
-                      fluid(maxWidth: 540, maxHeight: 360, quality: 80) {
-                        ...GatsbyImageSharpFluid
-                        ...GatsbyImageSharpFluidLimitPresentationSize
-                      }
+                      gatsbyImageData(layout: CONSTRAINED, width: 540, height: 360, quality: 80, transformOptions: { fit: COVER })
                     }
                   }
                 }
