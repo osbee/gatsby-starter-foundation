@@ -6,8 +6,8 @@
   NODE_VERSION = "22"
 
 [dev]
-  command = "npm run develop"
-  targetPort = 8000
+  command = "npm run develop -- -p 8001"
+  targetPort = 8001
   port = 8888
 
 [[plugins]]

@@ -70,3 +70,6 @@ yarn-error.log
 dist/
 .env
 .prisma/
+
+# Local Netlify folder
+.netlify
