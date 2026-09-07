@@ -46,8 +46,11 @@ export const handler = async (event) => {
   }
 
   try {
-    const created = await getDb().message.create({
-      data: { name, email, subject, message },
+    const created = await getDb().orm.public.Message.create({
+      name,
+      email,
+      subject,
+      message,
     })
     return { statusCode: 200, headers, body: JSON.stringify({ ok: true, id: created.id }) }
   } catch (error) {
