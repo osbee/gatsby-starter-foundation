@@ -1,5 +1,6 @@
 {
   "name": "@stackrole/gatsby-starter-foundation",
+  "type": "module",
   "description": "A starter to launch your blazing fast personal website and a blog, Built with Gatsby and Netlify CMS. Made with ❤ by Stackrole",
   "version": "1.0.0",
   "author": "Stackrole <stackrole@gmail.com>",
@@ -18,9 +19,13 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "contract:emit": "prisma contract emit"
   },
   "dependencies": {
+    "@prisma/cli-engine": "^0.3.0",
+    "@prisma/orm-postgres": "^8.0.0-rc.8",
+    "dotenv": "^17.4.2",
     "gatsby": "^2.21.33",
     "gatsby-background-image": "^1.1.1",
     "gatsby-image": "^2.4.3",
@@ -44,6 +49,7 @@
     "netlify-cms": "^2.10.48",
     "netlify-cms-app": "^2.12.12",
     "node-sass": "^4.14.1",
+    "prisma": "^8.0.0-rc.13",
     "prismjs": "^1.20.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

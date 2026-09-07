@@ -1,4 +1,5 @@
 /** @jsx jsx */
+import { useState } from "react"
 import { jsx } from 'theme-ui'
 import { graphql } from "gatsby"
 import {RiSendPlane2Line} from "react-icons/ri";
@@ -27,6 +28,40 @@ export const pageQuery = graphql`
 const Contact = ({data}) => {
   const { markdownRemark, site } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
+  const [status, setStatus] = useState('idle')
+  const [feedback, setFeedback] = useState('')
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const form = event.currentTarget
+    const fields = {
+      name: form.name.value,
+      email: form.email.value,
+      subject: form.subject.value,
+      message: form.message.value,
+    }
+    setStatus('sending')
+    setFeedback('')
+    try {
+      const res = await fetch('/.netlify/functions/submit-message', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(fields),
+      })
+      const result = await res.json().catch(() => null)
+      if (res.ok && result && result.ok) {
+        setStatus('success')
+        setFeedback('Got your message. Thanks for reaching out!')
+        form.reset()
+      } else {
+        setStatus('error')
+        setFeedback((result && result.error) || 'Unable to send. Please check your connection and try again.')
+      }
+    } catch (err) {
+      setStatus('error')
+      setFeedback('Unable to send. Please check your connection and try again.')
+    }
+  }
 
   return  (
     <Layout className="contact-page" sx={contactStyles.contactPage}>
@@ -37,8 +72,7 @@ const Contact = ({data}) => {
       <div className="wrapper">
         <h1>{frontmatter.title}</h1>
         <div className="description" dangerouslySetInnerHTML={{ __html: html }} />
-        <form className="contact-form" action="/thanks" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact" />
+        <form className="contact-form" method="POST" onSubmit={handleSubmit}>
           <p>
             <label>Name<input type="text" name="name" required /></label>   
           </p>
@@ -51,11 +85,16 @@ const Contact = ({data}) => {
           <p>
             <label>Message<textarea name="message" required ></textarea></label>
           </p>
+          {feedback && (
+            <p role="status" className={status === 'error' ? 'form-status -error' : 'form-status'}>
+              {feedback}
+            </p>
+          )}
           <p className="text-align-right">
-            <button className="button"            
+            <button className="button" disabled={status === 'sending'}            
             sx={{
               variant: 'links.button'
-            }} type="submit">Send Message <span className="icon -right"><RiSendPlane2Line/></span></button>
+            }} type="submit">{status === 'sending' ? 'Sending…' : 'Send Message'} <span className="icon -right"><RiSendPlane2Line/></span></button>
           </p>
         </form>
       </div>
