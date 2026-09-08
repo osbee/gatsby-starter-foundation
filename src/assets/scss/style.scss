@@ -382,6 +382,19 @@ a {
   &.bt-card-cyan {
     border-bottom-color: var(--bt-cyan-600);
   }
+
+  &.bt-card-purple {
+    border-bottom-color: #8b5cf6;
+  }
+
+  &.bt-card-orange {
+    border-bottom-color: #f97316;
+  }
+}
+
+a.bt-card {
+  display: block;
+  text-decoration: none;
 }
 
 .bt-icon-tile {
@@ -400,6 +413,14 @@ a {
   }
 }
 
+.bt-icon-tile-lg {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  font-size: 30px;
+  line-height: 1;
+}
+
 .bt-icon-indigo {
   background: var(--bt-indigo-100);
   color: var(--bt-indigo-600);
@@ -415,6 +436,16 @@ a {
   color: var(--bt-cyan-600);
 }
 
+.bt-icon-purple {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.bt-icon-orange {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
 .bt-card-indigo:hover .bt-icon-indigo {
   background: var(--bt-indigo-600);
   color: #fff;
@@ -427,6 +458,16 @@ a {
 
 .bt-card-cyan:hover .bt-icon-cyan {
   background: var(--bt-cyan-600);
+  color: #fff;
+}
+
+.bt-card-purple:hover .bt-icon-purple {
+  background: #7c3aed;
+  color: #fff;
+}
+
+.bt-card-orange:hover .bt-icon-orange {
+  background: #ea580c;
   color: #fff;
 }
 
@@ -830,6 +871,83 @@ a {
   }
 }
 
+// Delivery process (services page)
+.bt-process {
+  position: relative;
+  overflow: hidden;
+  background: #1e1b4b;
+  color: #fff;
+  border-radius: 48px;
+  padding: 48px;
+  margin-bottom: 96px;
+
+  .bt-process-inner {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .bt-process-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 24px;
+  }
+
+  .bt-process-text {
+    color: #c7d2fe;
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .bt-process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .bt-process-step {
+    padding: 24px;
+    background: rgba(49, 46, 129, 0.5);
+    border: 1px solid var(--bt-indigo-700);
+    border-radius: 16px;
+
+    .bt-process-num {
+      font-size: 24px;
+      font-weight: 700;
+      color: #818cf8;
+      margin-bottom: 8px;
+    }
+
+    h4 {
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+
+    p {
+      font-size: 14px;
+      color: #c7d2fe;
+      line-height: 1.6;
+      margin: 0;
+    }
+  }
+
+  .bt-process-blob {
+    position: absolute;
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+    background: #6366f1;
+    filter: blur(60px);
+    opacity: 0.3;
+    bottom: -24px;
+    right: -24px;
+  }
+}
+
 // Footer
 .bt-footer {
   border-top: 1px solid var(--bt-slate-200);
@@ -863,6 +981,16 @@ a {
   .bt-contact-grid {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+
+  .bt-process {
+    border-radius: 28px;
+    padding: 32px;
+
+    .bt-process-inner,
+    .bt-process-steps {
+      grid-template-columns: 1fr;
+    }
   }
 
   .bt-hero {

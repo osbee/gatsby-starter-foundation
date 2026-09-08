@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 const menuItems = [
   { path: "/", title: "Home" },
   { path: "/about/", title: "About" },
+  { path: "/services/", title: "Services & AI" },
   { path: "/ai-solutions/", title: "AI Solutions" },
   { path: "/contact/", title: "Contact" },
 ]
