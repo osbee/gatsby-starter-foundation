@@ -34,7 +34,7 @@ const ContactPage = () => {
     setStatus("sending")
     setFeedback("")
     try {
-      const res = await fetch("/.netlify/functions/submit-message", {
+      const res = await fetch("/api/submit-message", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(fields),

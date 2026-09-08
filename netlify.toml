@@ -10,5 +10,10 @@
   targetPort = 8001
   port = 8888
 
+[[redirects]]
+  from = "/api/submit-message"
+  to = "/.netlify/functions/submit-message"
+  status = 200
+
 [[plugins]]
   package = "netlify-plugin-gatsby-cache"

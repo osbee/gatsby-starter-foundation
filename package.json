@@ -26,8 +26,10 @@
   },
   "dependencies": {
     "@gatsbyjs/reach-router": "^2.0.1",
+    "@mdx-js/react": "^1.6.22",
     "@prisma/cli-engine": "^0.3.0",
     "@prisma/orm-postgres": "^8.0.0-rc.8",
+    "@theme-ui/mdx": "^0.16.2",
     "dotenv": "^17.4.2",
     "gatsby": "^5.16.1",
     "gatsby-plugin-google-analytics": "^5.16.0",
