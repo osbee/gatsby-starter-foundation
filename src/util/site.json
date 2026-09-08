@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Foundation",
-    "titleTemplate": "%s",
-    "description": "A starter to launch your blazing fast personal website and a blog, Built with Gatsby and Netlify CMS. Made with ❤ by Stackrole",
-    "siteUrl": "https://foundation.stackrole.com",
+    "title": "BrilliantTechnologies",
+    "titleTemplate": "%s | BrilliantTechnologies",
+    "description": "The Next Generation of Cloud AI — Bright Ideas, Brilliant Execution. High-performance cloud architecture and autonomous AI agents.",
+    "siteUrl": "https://brillianttechnologies.com",
     "image": "/assets/stackrole.png",
     "iconimage": "/assets/stackrole.png",
-    "twitterUsername": "@stackrole"
+    "twitterUsername": ""
   },
   "ga": "UA-XXXXXXXXX-X"
 }

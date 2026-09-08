@@ -1,17 +1,8 @@
-/** @jsxImportSource theme-ui */
-import { Link } from "gatsby"
-import { RiHeart2Line } from "react-icons/ri";
+import React from "react"
 
 const Footer = () => (
-  <footer 
-    className="site-footer"
-    sx={{
-      bg: 'primary'
-    }}
-  >
-    <div className="container">
-      <p>A GatsbyJS Starter for Netlify CMS, Made with <span className="icon -love"><RiHeart2Line/></span> by <Link to="/">Stackrole.com</Link></p>
-    </div>
+  <footer className="bt-footer">
+    <p>&copy; 2026 BrilliantTechnologies. Empowering the future of intelligence.</p>
   </footer>
 )
 
